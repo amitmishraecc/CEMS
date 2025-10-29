@@ -1,0 +1,141 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@college.edu",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Admin User",
+      "approved": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "username": "student1",
+      "email": "student1@college.edu",
+      "password": "student123",
+      "role": "student",
+      "name": "John Student",
+      "approved": true,
+      "createdAt": "2024-01-03T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "username": "organizer2",
+      "email": "organizer2@college.edu",
+      "password": "org123",
+      "role": "organizer",
+      "name": "Pending Organizer",
+      "approved": true,
+      "createdAt": "2024-01-04T00:00:00.000Z"
+    },
+    {
+      "username": "org",
+      "email": "mishraamit7348@gmail.com",
+      "password": "org123",
+      "name": "Amit",
+      "role": "organizer",
+      "approved": true,
+      "createdAt": "2025-10-29T17:16:27.466Z",
+      "id": 5
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Tech Conference 2024",
+      "description": "Annual technology conference featuring industry leaders and workshops.",
+      "date": "2024-03-15",
+      "time": "09:00",
+      "location": "Main Auditorium",
+      "category": "Technology",
+      "organizerId": 2,
+      "organizerName": "Event Organizer",
+      "featured": true,
+      "image": "https://via.placeholder.com/400x200?text=Tech+Conference",
+      "maxCapacity": 200,
+      "createdAt": "2024-01-10T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Sports Day",
+      "description": "Inter-college sports competition with various events.",
+      "date": "2024-02-20",
+      "time": "08:00",
+      "location": "Sports Complex",
+      "category": "Sports",
+      "organizerId": 2,
+      "organizerName": "Event Organizer",
+      "featured": true,
+      "image": "https://via.placeholder.com/400x200?text=Sports+Day",
+      "maxCapacity": 500,
+      "createdAt": "2024-01-12T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "Cultural Festival",
+      "description": "Celebrate diversity with music, dance, and food from around the world.",
+      "date": "2024-04-10",
+      "time": "14:00",
+      "location": "Cultural Center",
+      "category": "Cultural",
+      "organizerId": 2,
+      "organizerName": "Event Organizer",
+      "featured": false,
+      "image": "https://via.placeholder.com/400x200?text=Cultural+Festival",
+      "maxCapacity": 300,
+      "createdAt": "2024-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "Career Fair",
+      "description": "Connect with top employers and explore career opportunities.",
+      "date": "2024-03-01",
+      "time": "10:00",
+      "location": "Exhibition Hall",
+      "category": "Career",
+      "organizerId": 2,
+      "organizerName": "Event Organizer",
+      "featured": false,
+      "image": "https://via.placeholder.com/400x200?text=Career+Fair",
+      "maxCapacity": 400,
+      "createdAt": "2024-01-18T00:00:00.000Z"
+    },
+    {
+      "title": "MAR KAT",
+      "description": "NO RULES ONLY DEATH IS WIN",
+      "date": "2025-10-29",
+      "time": "22:48",
+      "location": "India",
+      "category": "Sports",
+      "maxCapacity": 100,
+      "featured": false,
+      "image": "data:image/webp;base64,UklGRhwRAABXRUJQVlA4IBARAAAQiwCdASo4ATgBPulqrlApJi40qdJLqpAdCWVudFzbVXd+H/1y+/FZXnqmRfdQf/hfa8821toDQr9+//2N6b8VUYklXsmpJy8Naz7DdEbJV1zMi1Rugt9qBVjHRgmWkgwpbh4caOjFHIJSydIh9aS9IbAPiXhdnf/pfVFXz16236GAf0wQldeaTEQWBQ+hIKCEIKDIEuqbhiS3b1k/ZCC73qQrdvkT2fHfktmsc93OEBYbAb2Pe5L+JV9/NVqQAIBTamhpwY/HyjLtc0NTwN82OXg3U0HD8JlBl60V1gk4JTx788QgsU2uh7KJWW+udstMrsKYL3loRd43jZKavu/TEegFFNtYYLAdU+7Np0ieB708pjYvvkqY1l9xx7tETSAGrnbg/31sPWQ+HOozueJ4B42vNgx9GziGx56OXGJY/rEk1e3ZnMUQNb+aPN9KEn+dXL0eIHBBcuz4s2Bll8my5I//64k2ynFVbZesQIB+vNn1c3JMw+ZdREYJSlbBAQQZNUtPuMLqy3FHJHKdbV21pFo+vf1bHIT6S03H62iULaOwkXabSIcOo/a4yCDjBq8CBWb/5x08G6ZBsyaGyyfG4e+xxGhyjjF7qNTT7ZoDZf9v4EbsETv4pGOHJj0KY5Qt1gnuzEsqZlWcX5dYt4aKKAOJYEFvPH2QUGFpcUgB9pp2bRzDqUTNJ/8R11/1zThS3l2zjawDXF99gcNuzf8AfhkVUUuBTHOtD5w9a0YPJit0lMbLZPtI2vyWPjFKf5Q4+066lXmLTGD8cyhzOGfJINXhJ7ZqlD3W2cf0YyhR7MT5rBg9bBOaXPJlRr5P5mj0uMjwXOeg4kNpWtF+IkGVGGmjjsalEtGsW28xYnRjMNJbCUb1DLblvPNDVTpnwgfqxHJiNBU3qBSiiEes6V3VOyQF336ASVwSTw2DqZoqfWZR6PXN+LYhbokzTH0Movo1tMs5Exu/RtzTJaWQpx1XAL7t4J1SyN4CdVFZL6iTN5mgp2DLWF9UPhpTnw9WLTda5uwiTLXnCeLGPcj57ItuheXeQuaJAUyYO34c6l+OloaJDqulFrNNs5RoDXc/1uevIyEOEc2qGWkD+gx43PTS2Vc/T0kYbXLobXkxlCjbIMt/4jiBkfka2U3BsXDweIVcmBePUyFjh7o2thJ0C3urqfr5PaunZHUN52apoqwVmzBNBOVij5J5i5019Q1/NPnD45OQm1iKo3eHnlEnUk45HSD9+3AiajkhXB9HX5IUlcxWOs2BdUlIebsOkAiVGNWaWzZiYPRYh3Gdr/qAT0ntI0lc2vRpZ8rUVLp1eZ5Xc0cnoX0/oXF5Q7v0tXqNhyUi8MFm8XfxHRXO0CBj6fVPSZcI6MwdtlklAyUcthsh3tbYWfVJml29GGOiPZ6Po87j/yz15HMpwGJwisu8IDeQ+k5V3eDnf7i+qqf/rvChn7KOAvOpu8J2+M2M4HjAUayfvPROYkzzBZDhKNjk9NswAAD+1i1/ihxh6ICz7CA+BhksOqfEPylSD0K5G05PsoIr+UBSccxgsBZr48GS3X8T8ZbHDkYVCc9s+nv+WxQdb8mHr0SaVpakmdcv4EyWYLcgVnewlBePKatmT3Oa4If9L1NnRwICpi8gxpk4yssKWB1tXV/gfT68dgwhVGX9G6Cw3V6j9YHBcZinxUNCVqKZYRpaUmCQw2gk5+6T42ZDUhB7n5JFoNsqVjglwDpC2JeM3wv99Zg6GoRL3BZZ9eb/G8spsaeoC//Yhzf4PWMQxJExZt7pREFKD4F7ML5MIhHMBFS56wEuOpSUgX8xAnPOq+3+CIaogPtLDZbYILsi1a+uh/sCDBieDleTcUDfjUObhyf8jNbPuMxo4QWsNDM1loyw2GSMbgI8mkU5wy9W5uDWVo5DmUqzcjac9cAN+vAnosKxS2ZQJ9HD5yyfvjPMNq6wxhiktjQUcwgjALGRyEgDMp0S/vgojZvn2SMszbQ+f9lbGM4+pOw5Oou2RJ9nEAZgxZAFO2CdKIEcqVkZ9FYnXYzx6CSi9H8ws2lHybk/KEII7WzkAzrn0Dv8bqu0xOzseFmpQamvco/n+nfBwSlkkEZ7xMIA+jaKPIuvTMp6MuHiedmOwAYjADyZGt+CwWd0A0KZ2+K6hdk/nKWiubwwNyVreXgecffibxKvR1FoW+aDILvL8wPIPAMS2gLRRf7CYNG/wkubcZk5oLb1dAeMsq5Y+qE3xVZuVFPr2lCBv/Sf62EyB839o0ctICkf8Xvj7z7KWojXJoPp6WoTfB9tZ47hL3utj2JV4WcNgtwgIvX8401sOlwC7lwmchAoLYpfizwi2cMc6qCRVHfQOBJsREBm0IDxfmHUuMbwd4Xdqcp2n/AJ5dKZjduf0LHcYdrs/P9oV0Ch50i6su7lTdwLjl+nKb+8gB8HuKUiStlII7s/NoOrq5Mv6v5YnRO/yY9ARHu1ivYY7IofYKMLEsZ46J+GzCZOOegV/MXBtz+zL5XXeTZi4OErTajbaoDubXUimNkeBAjrCrvcwFrUEmRg5XQaqgH/kpXU69MeyQZ0r3ir+U5dJyr+OIKcoR/v3zmo4hK7cV3sGiX49/dq3qfIGVgMMZdcFBz6ePXOYqZTBceqOoRqcI/Z/5z5q/vvoZBwNAxm2rHh5/dH6r+SfKRdoGWyaf0tZRYzid90S8etAABZl/45/GJ7yZLpaPwWA11UpgfOTIy0qMH4djPI5xII3TgVCnX3sTEL4T7SgWEEFwQi1+mwfvbLnrLXswF+BJt9RPSiWU9Gb9T/UfnLExNz1ETrOcB8Gpp3/KHJPd3icBjpMqpKoFdyJ4SUETRdDw7YP6UxirzIr6ttZ3s7IVAsnorLWhmLh8fiwNz2yMRbiI45p5rp0AbkzwQSQU9AYHlywhMnVeD2moTnu18M7dDnpwhBReDXdABlys/7z8q/ph0Qgh5swB4EbAvZnUs4me4VrZRTW57MyZSxvAPwwgAlC+bQp4azsmg3sYexYsVPkCBy61NdoYYvEvEEYjPKo8IzJWH1D2m8wsc/cI6g9/Pm348HS5vuJ2VfdtBwPAOL4wWvzdf10a1wi5RgZzPCqAnao0DCAYFa2SRNtVW/PsTkz/jOAVtLf6IucllLMrjRx22/gL1DpK2ZX5Km8/w1uuvk0PMNkFzqTlH7S1qv/SAL1zsBUX27XoGJovkfZ1Hl9qr7DNTU9wg0a+ty8xr6U+CKsWsNbYNZvCKKRbkJloy1rlyqKXGFG07KL6E+0dGcfF/zjKEtGQ3+EQACh9xWZfdOyDPZb26IxnJDKfgiqaXtAnIfbHxFXld7P0TyK/iQ8Ur+u8pOm3fF7cE6gEasmPAFgDy9XxUxCmp05xGjl37PjJbUIZY5YXKXXSQ7a6bV7E7cBiVxX3gRKEO9WqXF0I/eEJEh0Z6F1e3Wn6MBJ1DW3ISfp5sNAdFfkL6Hb50M/RV+JFbYCPjHVqI3AIQEYrkpIR9Aqw5xSNKO5SB4on7GLSxTeagvTynGV6XWllVcTQHpWQTP/s3lJf/yZnXuiQDcqCruxBFIfNXKmNhPVkZrgKxP5JDf/K6vHSO7gTuFesrdcSwDJvhkfJokOHQWMCb/bcpg8gZRLaSF59VDVRb/nw1HqpHnw19XpPJ1nrDGP/8sNEdTCFwyIUMm/0vDQwoKkAq6/LHnOs3E2PVbyoucoXkXoVDi5rSHBLEgqlJlVYCQGnGOLdyI7rkURYjIVxpTwJv0jgImRAkQ0qYIYpNNhTX7Hvq3VITP8sQ/jaiPrUhmtT9aP5fD/MYg+YjZD3wavUu1ks8AtpNQ5A3wTeqcwjQli+TVSegkgJ/8LDZplR4RXfArPr5kme1LMChj25Nq/7J9aNJz0+U1KHNYKOcFIh81Q0TlYrnzfq/WE9Y2xWSSySYuJ4CzqJYVXYnR+xTtlRnBQ4ATPrZx9HwyOi9uSJZd4OYNG2XnHGEkRZ86ivFFnGmN3uqLqGdoPePRarRT02wVHTzJe0KykVSLknx9KAkTknI8WVsYDBMexo46ubWlEDuHsYGbnWTKrdX3DYFtEhn8HTxRYH9816LvF8ZwXc0BbiqIpTGuwp4lF9Mw4HixGDppkKOAJcgmn7LFnQjyTWnPvmTN1Q3C+4ePVZ92YvEnIuDdOxlaPrmQhRKFLA2Ky/MfBA8ILjrX1Uxl6+yb5W6mVhcrznPH7uViTcR/yfFrwyX28NCq3eSp4T9qgoqCbYZaNNjtRgjrldqU2Gur+bMawrC/iy3AN/59L7ekwzkSCvPrvoSuYF7y1/ilqRF0OYRI5bMmBcAMDGolvqLOY+cHFD8/49NP6FqXRx4uWt2StMT0rweNqqGl/L0UdHKtddiI1clmk5VlonUJnFclk4/VE+vNnhxrPd6RnJCcJdQkmpRzFAmgEFpA1XXYxmkWYRy8ofOLwQ8bf1nyvOwMl238/f689zCuUtmnFmYBatKjQkqSvyxgCYiImqjQQdzKKCVs/syBrXiJ9JIkVMci1LvJL9htpsW0YbcWRfA3KidLQIB/qioWJ/0rS4W75b53JlSsbzJHEVAPCBBvhmqWttIWZXCDrIFQO+N7Kbvwq7+Oe6/DMZd51akVN568d1b8Q0N7HEEqfJeXb6W8oOOwI+ZHzfXPRDiK/WZKhquEzMWITEWzisaiM2W+whMqbfUsDlyzSh+6X7vZpzyfk3drzrhvx6ORKbqSTpglmk0Xznyn4R8mL1k8xxAYPLwaGC1ue+dzKtKLf7ZZFH2BYe53YgsJ3o4fJyyprU9bRklzOhp/MihmpNheFp8QRRIf/dPExwmwaWcyf9bTqp1YB0UBiYD8R/JYkIElisDlDLHGE/dCz76fyBHcQQfuk9wbfmuDm/FOb+L7cIBoq3bO2wfIyvq5MYLNXo3J7XqX13oGUbbZjAA6x28da3RLFxmrmdx/mla+/mcky8IFATZ6HTmegUZWZ/BF1diztLgRdy0cPoqJ5A2pKIA+ZTmmLHK0uypJSldcEbaVbDF6HbHndM88XmEP4d3wzGOsqvoxcj19YNu7van2T6umGtlDp+9kGfiG1niYtXCn1CwLGVkoZQs57O8Zut79oqlqCrEOlNcXMFMloZE7FFy/hcAb2AAehInzUxpDNOTpgeMHnjfDjhHC7eoUS4elumWFtBWAsGM6VqlplOEK6qzT7AH6Wfb6I4cA1DDMEk92nqoR1fhr9Tf5LZdsN6/LhhaUQ5oslE8bY/995kKIZOho4ie0WzWIkTkddSgIStiOHYEecx4Rlb8mnVtDmas9cFGyPzVwHr3Ya3oXJEDGOS37rrJUPZnIlm9fhEtMdMbyz7Sp7tPEa0LBDcBVgHifg2EkkR5E+dEW8s8nFJlWo0e5LG0R1oJPziVNQNNfKKcKN2JVXTwYbBQb0ooC8cbln/UwIehp040jKCUJ9UznjPYyhGigygmBumt1nA0yaELAmeHp93j4yKmbceGs+CkXEOCvgIllVsmQ83lp4ecrzVFmFtg15CwKhR7nMd6YkxsFcDQ5vor9TFT1YBiNmtm/4XITx3JAwbLxhrp2YMwLNDaUxrWp5M7fRAGfvB0e5aiwWlNByFmHk8WRB9TOsmM/A0wzhQsIuRyRQm9XgG4ecx68HewhUtp3XEIJJBTaJK26hu9TnInVmZK5way+TX++xBUa9kpSe5HJuO7D3BvSOv3Y+1X6UJzIaMGlLTA5uZQN9ANtMyfzAGgotmm6daocBVkFllr3XG0yPT0O2W6oVe37H4GuJIfugBsAfYBkDRA5H59OpjY8Po0Ms5Z3eZjevPaWzuFneAjtqwgN6WrrUIU0xpQAAAA=",
+      "organizerId": 5,
+      "organizerName": "Amit",
+      "createdAt": "2025-10-29T17:18:41.353Z",
+      "id": 5
+    }
+  ],
+  "registrations": [
+    {
+      "id": 1,
+      "eventId": 1,
+      "userId": 3,
+      "userName": "John Student",
+      "userEmail": "student1@college.edu",
+      "registeredAt": "2024-01-20T10:00:00.000Z",
+      "status": "confirmed"
+    },
+    {
+      "id": 2,
+      "eventId": 2,
+      "userId": 3,
+      "userName": "John Student",
+      "userEmail": "student1@college.edu",
+      "registeredAt": "2024-01-21T11:00:00.000Z",
+      "status": "confirmed"
+    }
+  ]
+}
