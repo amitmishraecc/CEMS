@@ -164,23 +164,35 @@ const ContactPage = () => {
                 </a>
               </div>
             </div>
-
-         <div className="campus-map">
-  <h3>Campus Map</h3>
-  <div className="map-embed" style={{ width: "100%", height: "300px", borderRadius: "8px", overflow: "hidden", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>
-    <iframe
-      title="LIET Campus Map"
-      src="https://maps.app.goo.gl/pJssiFY1k79ZL6Ws6"
-      width="100%"
-      height="100%"
-      frameBorder="0"
-      style={{ border: 0 }}
-      allowFullScreen=""
-      aria-hidden="false"
-      tabIndex="0"
-    ></iframe>
-  </div>
+  // <div className="campus-map">
+  //             <h3>Campus Map</h3>
+  //             <div className="map-placeholder">
+  //               <p>📍 Campus Location</p>
+  //               <p className="map-note">Interactive map would be displayed here</p>
+  //             </div>
+   <h3>Campus Map</h3>
+<div
+  className="map-embed"
+  style={{
+    width: "100%",
+    height: "300px",
+    borderRadius: "8px",
+    overflow: "hidden",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+  }}
+>
+  <iframe
+    title="LIET Campus Map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112174.96876528619!2d77.38441678882508!3d28.52565643830781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc117b9edb9ef%3A0xdab6d36968d2fd8b!2sLloyd%20Institute%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1761806688575!5m2!1sen!2sin"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
 </div>
+
             </div>
           </div>
         </div>
