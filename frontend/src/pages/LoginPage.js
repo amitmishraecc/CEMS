@@ -107,7 +107,7 @@ const LoginPage = () => {
               <strong>Admin:</strong> admin / admin123
             </div>
             <div className="demo-item">
-              <strong>Organizer:</strong> organizer1 / org123
+              <strong>Organizer:</strong> org / org123
             </div>
             <div className="demo-item">
               <strong>Student:</strong> student1 / student123
