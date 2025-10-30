@@ -164,11 +164,9 @@ const ContactPage = () => {
                 </a>
               </div>
             </div>
-           
-
-   <h3>Campus Map</h3>
-<div
-  className="map-embed"
+<div className="campus-map">
+<h3>Campus Map</h3>
+<div className="map-embed"
   style={{
     width: "100%",
     height: "300px",
@@ -188,7 +186,6 @@ const ContactPage = () => {
     referrerPolicy="no-referrer-when-downgrade"
   ></iframe>
 </div>
-
             </div>
           </div>
         </div>
