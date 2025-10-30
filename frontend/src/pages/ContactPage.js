@@ -165,12 +165,22 @@ const ContactPage = () => {
               </div>
             </div>
 
-            <div className="campus-map">
-              <h3>Campus Map</h3>
-              <div className="map-placeholder">
-                <p>📍 Campus Location</p>
-                <p className="map-note">Interactive map would be displayed here</p>
-              </div>
+         <div className="campus-map">
+  <h3>Campus Map</h3>
+  <div className="map-embed" style={{ width: "100%", height: "300px", borderRadius: "8px", overflow: "hidden", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>
+    <iframe
+      title="LIET Campus Map"
+      src="https://maps.app.goo.gl/pJssiFY1k79ZL6Ws6"
+      width="100%"
+      height="100%"
+      frameBorder="0"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      aria-hidden="false"
+      tabIndex="0"
+    ></iframe>
+  </div>
+</div>
             </div>
           </div>
         </div>
