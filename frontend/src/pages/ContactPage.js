@@ -164,12 +164,8 @@ const ContactPage = () => {
                 </a>
               </div>
             </div>
-  // <div className="campus-map">
-  //             <h3>Campus Map</h3>
-  //             <div className="map-placeholder">
-  //               <p>📍 Campus Location</p>
-  //               <p className="map-note">Interactive map would be displayed here</p>
-  //             </div>
+           
+
    <h3>Campus Map</h3>
 <div
   className="map-embed"
