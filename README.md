@@ -2,6 +2,10 @@
 
 A comprehensive event management system for colleges built with React and JSON-Server.
 
+# Deployment Link 
+https://cems-neon.vercel.app/
+
+
 ## Features
 
 - **Multi-role Authentication**: Student, Organizer, and Admin roles
