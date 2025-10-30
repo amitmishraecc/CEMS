@@ -30,13 +30,13 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h4>Contact Info</h4>
-          <p>Email: events@college.edu</p>
-          <p>Phone: (555) 123-4567</p>
-          <p>Address: 123 College St, City, State 12345</p>
+          <p>Email: amitmishramca24-26@liet.in</p>
+          <p>Phone: 7388023729</p>
+          <p>Address: KP-2, Greater Noida, UP 201306</p>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 College Event Management System. All rights reserved.</p>
+        <p>&copy; 2024 College Event Management System. All rights reserved Managed BY - AMIT||KAJAL||DEEKSHA.</p>
       </div>
     </footer>
   );
