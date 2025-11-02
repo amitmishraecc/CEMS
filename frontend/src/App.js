@@ -40,6 +40,7 @@ function App() {
               <Route path="/dashboard/student" element={<StudentDashboard />} />
               <Route path="/dashboard/organizer" element={<OrganizerDashboard />} />
               <Route path="/dashboard/admin" element={<AdminDashboard />} />
+              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             </Routes>
           </main>
           <Footer />
