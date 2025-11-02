@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getUsers, updateUser, getEvents, getRegistrations } from '../../utils/api';
+import { getUsers, updateUser, deleteUser, getEvents, deleteEvent, getRegistrations } from '../../utils/api';
 import { useAuth } from '../../context/AuthContext';
 import ProtectedRoute from '../../components/common/ProtectedRoute';
 import './Dashboard.css';
@@ -38,11 +38,17 @@ const AdminDashboard = () => {
   const handleApproveOrganizer = async (userId) => {
     try {
       const userToUpdate = users.find(u => u.id === userId);
+      if (!userToUpdate) {
+        alert('User not found');
+        return;
+      }
       await updateUser(userId, { ...userToUpdate, approved: true });
       setUsers(users.map(u => u.id === userId ? { ...u, approved: true } : u));
+      alert('Organizer approved successfully!');
     } catch (error) {
       console.error('Error approving organizer:', error);
-      alert('Failed to approve organizer. Please try again.');
+      const errorMessage = error.response?.data?.message || error.message || 'Unknown error';
+      alert(`Failed to approve organizer: ${errorMessage}`);
     }
   };
 
@@ -52,11 +58,13 @@ const AdminDashboard = () => {
     }
 
     try {
-      await fetch(`http://localhost:3001/users/${userId}`, { method: 'DELETE' });
+      await deleteUser(userId);
       setUsers(users.filter(u => u.id !== userId));
+      alert('User deleted successfully!');
     } catch (error) {
       console.error('Error deleting user:', error);
-      alert('Failed to delete user. Please try again.');
+      const errorMessage = error.response?.data?.message || error.message || 'Unknown error';
+      alert(`Failed to delete user: ${errorMessage}`);
     }
   };
 
@@ -66,11 +74,13 @@ const AdminDashboard = () => {
     }
 
     try {
-      await fetch(`http://localhost:3001/events/${eventId}`, { method: 'DELETE' });
+      await deleteEvent(eventId);
       setEvents(events.filter(e => e.id !== eventId));
+      alert('Event deleted successfully!');
     } catch (error) {
       console.error('Error deleting event:', error);
-      alert('Failed to delete event. Please try again.');
+      const errorMessage = error.response?.data?.message || error.message || 'Unknown error';
+      alert(`Failed to delete event: ${errorMessage}`);
     }
   };
 
