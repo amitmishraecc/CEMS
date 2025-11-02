@@ -23,9 +23,9 @@ const Footer = () => {
           <h4>Connect</h4>
           <div className="social-links">
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
         <div className="footer-section">
