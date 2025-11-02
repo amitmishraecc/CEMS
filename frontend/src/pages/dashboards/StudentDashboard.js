@@ -108,13 +108,21 @@ const StudentDashboard = () => {
                       <>
                         <div className="card-header">
                           <h3>{registration.event.title}</h3>
-                          <span className="status-badge">{registration.status}</span>
+                          <span className={`status-badge ${registration.status}`}>
+                            {registration.status === 'pending' ? 'Pending Approval' : 
+                             registration.status === 'approved' ? 'Approved' : 
+                             registration.status === 'rejected' ? 'Rejected' : 
+                             registration.status}
+                          </span>
                         </div>
                         <div className="card-body">
                           <p><strong>Category:</strong> {registration.event.category}</p>
                           <p><strong>Date:</strong> {formatDate(registration.event.date)} at {registration.event.time}</p>
                           <p><strong>Location:</strong> {registration.event.location}</p>
                           <p><strong>Registered on:</strong> {formatDate(registration.registeredAt)}</p>
+                          {registration.event.course && (
+                            <p><strong>Target Course:</strong> {registration.event.course}</p>
+                          )}
                         </div>
                         <div className="card-actions">
                           <Link 
@@ -123,12 +131,14 @@ const StudentDashboard = () => {
                           >
                             View Event
                           </Link>
-                          <button
-                            onClick={() => handleCancelRegistration(registration.id)}
-                            className="btn btn-danger"
-                          >
-                            Cancel Registration
-                          </button>
+                          {(registration.status === 'pending' || registration.status === 'approved') && (
+                            <button
+                              onClick={() => handleCancelRegistration(registration.id)}
+                              className="btn btn-danger"
+                            >
+                              Cancel Registration
+                            </button>
+                          )}
                         </div>
                       </>
                     ) : (

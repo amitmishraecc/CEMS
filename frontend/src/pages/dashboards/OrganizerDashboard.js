@@ -168,7 +168,13 @@ const OrganizerDashboard = () => {
                         to={`/events/${event.id}/registrants`} 
                         className="btn btn-primary"
                       >
-                        View Registrants ({registrations[event.id]?.length || 0})
+                        Manage Registrants ({registrations[event.id]?.length || 0})
+                      </Link>
+                      <Link 
+                        to={`/events/${event.id}/report`} 
+                        className="btn btn-secondary"
+                      >
+                        View Report
                       </Link>
                     </div>
                   </div>

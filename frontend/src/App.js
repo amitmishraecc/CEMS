@@ -14,6 +14,8 @@ import StudentDashboard from './pages/dashboards/StudentDashboard';
 import OrganizerDashboard from './pages/dashboards/OrganizerDashboard';
 import AdminDashboard from './pages/dashboards/AdminDashboard';
 import EventFormPage from './pages/EventFormPage';
+import EventRegistrantsPage from './pages/EventRegistrantsPage';
+import EventReportPage from './pages/EventReportPage';
 import './App.css';
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
               <Route path="/events/:id" element={<EventDetailsPage />} />
               <Route path="/events/create" element={<EventFormPage />} />
               <Route path="/events/:id/edit" element={<EventFormPage />} />
+              <Route path="/events/:id/registrants" element={<EventRegistrantsPage />} />
+              <Route path="/events/:id/report" element={<EventReportPage />} />
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/login" element={<LoginPage />} />

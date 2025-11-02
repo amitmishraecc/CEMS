@@ -101,18 +101,7 @@ const LoginPage = () => {
             </p>
           </div>
 
-          <div className="demo-credentials">
-            <h3>Demo Credentials</h3>
-            <div className="demo-item">
-              <strong>Admin:</strong> admin / admin123
-            </div>
-            <div className="demo-item">
-              <strong>Organizer:</strong> org / org123
-            </div>
-            <div className="demo-item">
-              <strong>Student:</strong> student1 / student123
-            </div>
-          </div>
+        
         </div>
       </div>
     </div>

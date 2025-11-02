@@ -68,6 +68,12 @@ const EventDetailsPage = () => {
         return;
       }
 
+      // Check course match
+      if (event.course && user.course !== event.course) {
+        setError(`This event is only for students enrolled in ${event.course}. You are enrolled in ${user.course || 'N/A'}.`);
+        return;
+      }
+
       // Check capacity
       if (registrations.length >= event.maxCapacity) {
         setError('This event is full');
@@ -79,18 +85,22 @@ const EventDetailsPage = () => {
         userId: user.id,
         userName: user.name,
         userEmail: user.email,
+        userCourse: user.course,
         registeredAt: new Date().toISOString(),
-        status: 'confirmed',
+        status: 'pending', // Changed to pending for organizer approval
       };
 
-      await createRegistration(registrationData);
-      setSuccess('Successfully registered for this event!');
+      const response = await createRegistration(registrationData);
+      const createdReg = response.data;
+      setSuccess('Successfully registered for this event! Your registration is pending approval.');
       setError('');
       
-      // Refresh registrations
+      // Refresh registrations to get the full registration object
       const regResponse = await getRegistrations({ eventId: id });
-      setRegistrations(regResponse.data);
-      setRegistration(registrationData);
+      const allRegs = regResponse.data;
+      setRegistrations(allRegs);
+      const userReg = allRegs.find(reg => reg.userId === user.id);
+      setRegistration(userReg || createdReg);
     } catch (error) {
       console.error('Error registering:', error);
       setError('Failed to register. Please try again.');
@@ -207,13 +217,21 @@ const EventDetailsPage = () => {
               <div className="event-actions">
                 {registration ? (
                   <div className="registration-status">
-                    <p className="registered-message">✓ You are registered for this event</p>
-                    <button 
-                      onClick={handleCancelRegistration} 
-                      className="btn btn-danger"
-                    >
-                      Cancel Registration
-                    </button>
+                    <p className="registered-message">
+                      {registration.status === 'pending' 
+                        ? '⏳ Your registration is pending approval' 
+                        : registration.status === 'approved'
+                        ? '✓ You are registered for this event'
+                        : '✗ Your registration was rejected'}
+                    </p>
+                    {registration.status === 'pending' || registration.status === 'approved' ? (
+                      <button 
+                        onClick={handleCancelRegistration} 
+                        className="btn btn-danger"
+                      >
+                        Cancel Registration
+                      </button>
+                    ) : null}
                   </div>
                 ) : (
                   <button 
