@@ -128,7 +128,6 @@
 
 
 
-
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -143,6 +142,9 @@ const LoginPage = () => {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showResetPopup, setShowResetPopup] = useState(false);
+  const [resetEmail, setResetEmail] = useState('');
+  const [resetMessage, setResetMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -166,19 +168,29 @@ const LoginPage = () => {
     const result = await login(formData.username, formData.password);
 
     if (result.success) {
-      // Redirect based on role
       const role = result.user.role;
-      if (role === 'admin') {
-        navigate('/dashboard/admin');
-      } else if (role === 'organizer') {
-        navigate('/dashboard/organizer');
-      } else {
-        navigate('/dashboard/student');
-      }
+      if (role === 'admin') navigate('/dashboard/admin');
+      else if (role === 'organizer') navigate('/dashboard/organizer');
+      else navigate('/dashboard/student');
     } else {
       setError(result.error);
       setLoading(false);
     }
+  };
+
+  // 🔹 Handle Reset Password
+  const handleResetSubmit = (e) => {
+    e.preventDefault();
+
+    if (!resetEmail) {
+      setResetMessage('Please enter your email.');
+      return;
+    }
+
+    // Simulate sending reset link
+    setResetMessage(`A password reset link has been sent to ${resetEmail}`);
+    setResetEmail('');
+    setTimeout(() => setShowResetPopup(false), 2500); // close popup after 2.5s
   };
 
   return (
@@ -219,11 +231,17 @@ const LoginPage = () => {
 
             {/* 🔹 Forgot Password Link */}
             <div className="forgot-password">
-              <Link to="/forgot-password">Forgot Password?</Link>
+              <button
+                type="button"
+                className="link-button"
+                onClick={() => setShowResetPopup(true)}
+              >
+                Forgot Password?
+              </button>
             </div>
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="btn btn-primary btn-full"
               disabled={loading}
             >
@@ -238,9 +256,40 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+
+      {/* 🔹 Popup Modal */}
+      {showResetPopup && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Reset Password</h2>
+            <p>Enter your email to receive a password reset link:</p>
+
+            <form onSubmit={handleResetSubmit}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={resetEmail}
+                onChange={(e) => setResetEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn btn-primary btn-full">
+                Send Reset Link
+              </button>
+            </form>
+
+            {resetMessage && <p className="reset-message">{resetMessage}</p>}
+
+            <button
+              onClick={() => setShowResetPopup(false)}
+              className="btn btn-secondary btn-full"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default LoginPage;
-
