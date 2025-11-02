@@ -24,6 +24,7 @@ const EventFormPage = () => {
     maxCapacity: 100,
     featured: false,
     image: 'https://via.placeholder.com/400x200',
+    course: '',
   });
 
   useEffect(() => {
@@ -53,6 +54,7 @@ const EventFormPage = () => {
         maxCapacity: event.maxCapacity,
         featured: event.featured || false,
         image: event.image || 'https://via.placeholder.com/400x200',
+        course: event.course || '',
       });
     } catch (error) {
       console.error('Error fetching event:', error);
@@ -223,6 +225,32 @@ const EventFormPage = () => {
                   min="1"
                 />
               </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="course">Target Course *</label>
+              <select
+                id="course"
+                name="course"
+                value={formData.course}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select target course</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Law">Law</option>
+                <option value="Arts">Arts</option>
+                <option value="Science">Science</option>
+                <option value="Commerce">Commerce</option>
+              </select>
+              <small className="form-hint">
+                Only students enrolled in this course can register for this event.
+              </small>
             </div>
 
             <div className="form-row">

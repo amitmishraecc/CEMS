@@ -13,6 +13,7 @@ const RegisterPage = () => {
     confirmPassword: '',
     name: '',
     role: 'student',
+    course: '',
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -36,6 +37,12 @@ const RegisterPage = () => {
     // Validation
     if (!formData.username || !formData.email || !formData.password || !formData.name) {
       setError('Please fill in all required fields');
+      setLoading(false);
+      return;
+    }
+
+    if (formData.role === 'student' && !formData.course) {
+      setError('Please select your course');
       setLoading(false);
       return;
     }
@@ -65,6 +72,7 @@ const RegisterPage = () => {
       password: formData.password,
       name: formData.name,
       role: formData.role,
+      course: formData.role === 'student' ? formData.course : undefined,
     });
 
     if (result.success) {
@@ -155,7 +163,7 @@ const RegisterPage = () => {
               >
                 <option value="student">Student</option>
                 <option value="organizer">Organizer (requires approval)</option>
-                <option value="admin">Admin</option>
+               
               </select>
               {formData.role === 'organizer' && (
                 <small className="form-hint">
@@ -163,6 +171,32 @@ const RegisterPage = () => {
                 </small>
               )}
             </div>
+
+            {formData.role === 'student' && (
+              <div className="form-group">
+                <label htmlFor="course">Course *</label>
+                <select
+                  id="course"
+                  name="course"
+                  value={formData.course}
+                  onChange={handleChange}
+                  required
+                  className="form-select"
+                >
+                  <option value="">Select your course</option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Electrical Engineering">Electrical Engineering</option>
+                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Civil Engineering">Civil Engineering</option>
+                  <option value="Business Administration">Business Administration</option>
+                  <option value="Medicine">Medicine</option>
+                  <option value="Law">Law</option>
+                  <option value="Arts">Arts</option>
+                  <option value="Science">Science</option>
+                  <option value="Commerce">Commerce</option>
+                </select>
+              </div>
+            )}
 
             <div className="form-group">
               <label htmlFor="password">Password *</label>

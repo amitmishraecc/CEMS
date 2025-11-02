@@ -100,6 +100,7 @@ const LoginPage = () => {
               Don't have an account? <Link to="/register">Register here</Link>
             </p>
           </div>
+
         </div>
       </div>
     </div>

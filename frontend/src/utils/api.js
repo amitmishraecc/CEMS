@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://cems-g91r.onrender.com';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -33,6 +33,7 @@ export const getRegistrations = (params = {}) => {
 };
 export const getRegistration = (id) => api.get(`/registrations/${id}`);
 export const createRegistration = (registrationData) => api.post('/registrations', registrationData);
+export const updateRegistration = (id, registrationData) => api.patch(`/registrations/${id}`, registrationData);
 export const deleteRegistration = (id) => api.delete(`/registrations/${id}`);
 
 export default api;
