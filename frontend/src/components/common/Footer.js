@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Connect</h4>
           <div className="social-links">
-            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
             <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
             <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
